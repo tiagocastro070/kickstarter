@@ -1,3 +1,26 @@
-@import "./reset.scss"
+@import "./reset.scss";
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./utilities.scss";
+@import "./demo.scss";
 
-// :root {}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+/* https://css-tricks.com/inclusively-hidden/ */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

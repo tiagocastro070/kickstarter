@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root[data-selected-theme="light"] {
+  code {
+    background-color: $color-gray-90;
+  }
+}
+
+code {
+  display: inline-block;
+  padding: 0 5px;
+  margin: 0 5px;
+  border-radius: 6px;
+  background-color: $color-gray-30;
+}

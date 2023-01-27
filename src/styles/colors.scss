@@ -1,0 +1,128 @@
+$color-purple-10: #21005d;
+$color-purple-20: #381e72;
+$color-purple-30: #4f378b;
+$color-purple-40: #6750a4;
+$color-purple-50: #7f67be;
+$color-purple-60: #9a82db;
+$color-purple-70: #b69df8;
+$color-purple-80: #d0bcff;
+$color-purple-90: #eaddff;
+$color-purple-95: #f6edff;
+$color-purple-100: #fffbfe;
+
+$color-gray-10: #1d192b;
+$color-gray-20: #332d41;
+$color-gray-30: #4a4458;
+$color-gray-40: #625b71;
+$color-gray-50: #7a7289;
+$color-gray-60: #958da5;
+$color-gray-70: #b0a7c0;
+$color-gray-80: #ccc2dc;
+$color-gray-90: #e8def8;
+$color-gray-95: #f6edff;
+$color-gray-100: #fffbfe;
+
+$color-red-10: #410e0b;
+$color-red-20: #601410;
+$color-red-30: #8c1d18;
+$color-red-40: #b3261e;
+$color-red-50: #dc362e;
+$color-red-60: #e46962;
+$color-red-70: #ec928e;
+$color-red-80: #f2b8b5;
+$color-red-90: #f9dedc;
+$color-red-95: #fceeee;
+$color-red-100: #fffbf9;
+
+$color-green-10: #002112;
+$color-green-20: #003823;
+$color-green-30: #005234;
+$color-green-40: #006c47;
+$color-green-50: #00885a;
+$color-green-60: #00a56e;
+$color-green-70: #28c285;
+$color-green-80: #4fdf9e;
+$color-green-90: #70fcb9;
+$color-green-95: #bfffd9;
+$color-green-100: #f4fff5;
+
+$color-orange-10: #78350f;
+$color-orange-20: #92400e;
+$color-orange-30: #b45309;
+$color-orange-40: #d97706;
+$color-orange-50: #f59e0b;
+$color-orange-60: #fbbf24;
+$color-orange-70: #fcd34d;
+$color-orange-80: #fde68a;
+$color-orange-90: #fef3c7;
+$color-orange-95: #fffbeb;
+$color-orange-100: #fffef9;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+:root {
+  // Generic
+  --white: #ffffff;
+  --black: #000000;
+  // Light
+  --light-primary: #{$color-purple-40};
+  --light-primary-lighter: #{$color-purple-60};
+  --light-primary-darker: #{$color-purple-20};
+  --dark-accent: #{$color-red-40};
+  --dark-accent-lighter: #{$color-red-60};
+  --dark-accent-darker: #{$color-red-20};
+  --light-background: #{$color-gray-100};
+  --light-text: #{$color-black};
+  --light-focus: #{$color-red-50};
+  // Dark
+  --dark-primary: #{$color-purple-30};
+  --dark-primary-lighter: #{$color-purple-50};
+  --dark-primary-darker: #{$color-purple-10};
+  --dark-accent: #{$color-red-40};
+  --dark-accent-lighter: #{$color-red-60};
+  --dark-accent-lighter: #{$color-red-20};
+  --dark-background: #{$color-gray-10};
+  --dark-text: #{$color-white};
+  --dark-focus: #{$color-red-40};
+}
+
+@mixin lightTheme {
+  --primary: var(--light-primary);
+  --primary-lighter: var(--light-primary-lighter);
+  --primary-darker: var(--light-primary-darker);
+  --accent: var(--light-accent);
+  --background: var(--light-background);
+  --text: var(--light-text);
+  --focus: var(--light-focus);
+}
+
+@mixin darkTheme {
+  --primary: var(--dark-primary);
+  --primary-lighter: var(--dark-primary-lighter);
+  --primary-darker: var(--dark-primary-darker);
+  --accent: var(--dark-accent);
+  --background: var(--dark-background);
+  --text: var(--dark-text);
+  --focus: var(--dark-focus);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include darkTheme();
+  }
+}
+
+:root[data-selected-theme="dark"] {
+  @include darkTheme();
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include lightTheme();
+  }
+}
+
+:root[data-selected-theme="light"] {
+  @include lightTheme();
+}
